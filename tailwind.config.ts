@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -27,12 +26,6 @@ export default {
           "Courier New",
           "monospace",
         ],
-      },
-      colors: {
-        dark: "#121212",
-        grayDark: "#3D3D3D",
-        light: "#F5F5F5",
-        grayLight: "#A6A6A6",
       },
       borderRadius: {
         lg: "var(--radius)",

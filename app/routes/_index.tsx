@@ -9,10 +9,6 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold text-center text-white">
-        Welcome to Remix!
-      </h1>
-    </div>
+    <div className="px-16 overflow-hidden relative"></div>
   );
 }

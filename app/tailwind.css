@@ -1,11 +1,17 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
 
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
+@theme {
+  --color-dark: #121212;
+  --color-gray-dark: #3D3D3D;
+  --color-light: #F5F5F5;
+  --color-gray-light: #A6A6A6;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace
+}
 
 html,
 body {
-  @apply bg-white dark:bg-neutral-800;
-
+  @apply bg-dark font-sans;
 }
