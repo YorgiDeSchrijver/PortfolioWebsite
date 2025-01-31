@@ -23,9 +23,9 @@ export default function Header() {
       </nav>
       <div className="flex flex-col items-end text-lg">
         <button className="hover:underline active:underline">NL</button>
-        <button className="hover:underline text-grayLight active:underline">EN</button>
+        <button className="hover:underline text-gray-light active:underline">EN</button>
       </div>
-      <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 h-80 w-80 flex items-center justify-center rounded-full border border-grayDark pointer-events-none" />
+      <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 h-80 w-80 flex items-center justify-center rounded-full border-2 opacity-75 border-gray-dark pointer-events-none" />
     </header>
   );
 }
