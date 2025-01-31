@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import Header from "~/components/shared/header";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,6 +10,8 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="px-16 overflow-hidden relative"></div>
+    <div className="px-16 overflow-hidden relative">
+      <Header />
+    </div>
   );
 }
