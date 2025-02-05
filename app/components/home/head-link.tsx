@@ -10,7 +10,7 @@ export default function HeadLink({ href, icon, text }: HeadLinkProps) {
   return (
     <a
       href={href}
-      className="rounded-full gap-4 font-medium flex flex-row justify-center items-center text-xl font-sans text-gray-light border-gray-dark border py-4 px-8 italic tracking-tight"
+      className="rounded-full gap-4 font-medium flex flex-row justify-center items-center text-xl font-sans text-gray-light border-gray-dark border py-4 px-8 italic tracking-tight bg-dark"
     >
       {cloneElement(icon as React.ReactElement, { className: "text-light fill-light" })}
       {text}

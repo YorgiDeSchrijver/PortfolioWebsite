@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { useEffect, useState } from "react";
 
 const links = [
   { to: "/about", label: "About" },
@@ -8,8 +9,30 @@ const links = [
 ];
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isInitial, setIsInitial] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY <= 200) {
+        setIsInitial(true);
+        setIsScrolled(false);
+      } else if (window.scrollY > 200) {
+        setIsInitial(false);
+        setIsScrolled(true);
+      } else {
+        throw new Error("Unexpected scroll position");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <header className="grid grid-cols-3 items-center py-4 text-white font-sans">
+    <header
+      className={`grid grid-cols-3 items-center py-4 px-16 text-white font-sans w-full transition-all duration-1000 ${isInitial ? "absolute top-0" : isScrolled ? "bg-dark fixed top-0 z-[75] translate-y-0" : "fixed top-0 -translate-y-full"}`}
+    >
       <Link to="/" className="flex flex-col text-xl">
         <span>Yorgi</span>
         <span>De Schrijver</span>
@@ -25,7 +48,6 @@ export default function Header() {
         <button className="hover:underline active:underline">NL</button>
         <button className="hover:underline text-gray-light active:underline">EN</button>
       </div>
-      <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 h-80 w-80 flex items-center justify-center rounded-full border-2 opacity-75 border-gray-dark pointer-events-none" />
     </header>
   );
 }
