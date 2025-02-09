@@ -7,7 +7,7 @@ import Header from "~/components/shared/header";
 import LinkButton from "~/components/shared/link-button";
 
 export const meta: MetaFunction = () => {
-  return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }];
+  return [{ title: "Yorgi De Schrijver | Home" }, { name: "description", content: "Portfolio homepage Yorgi De Schrijver " }];
 };
 
 const links = [
@@ -15,6 +15,33 @@ const links = [
   { to: "/blog", label: "About" },
   { to: "/projects", label: "Blog" },
   { to: "/contact", label: "Projects" },
+];
+
+const workExperiences = [
+  {
+    period: "2025 - Present",
+    duration: "1 month",
+    company: "Cloudar",
+    role: "Internship development",
+  },
+  {
+    period: "2024 - Present",
+    duration: "3 months",
+    company: "Wolf Food Market",
+    role: "Studentjob",
+  },
+  {
+    period: "2023 - 2024",
+    duration: "11 months",
+    company: "AZ Klina",
+    role: "Studentjob",
+  },
+  {
+    period: "2022 - 2023",
+    duration: "1 year",
+    company: "Plein Publiek",
+    role: "Studentjob",
+  },
 ];
 
 export default function Index() {
@@ -56,22 +83,22 @@ export default function Index() {
         <div className="grid grid-cols-2 mb-32">
           <p className="text-light font-sans font-semibold text-xl ">... /About me ...</p>
           <p className="w-2/3 text-gray-light text-2xl font-sans font-normal z-10 -ml-20">
-            Hello! I'm <span className="text-light">Yorgi</span>, a <span className="text-light">student</span> from
-            Antwerp. I'm currently pursuing a degree in <span className="text-light">Informatics</span> at{" "}
+            Hello! I&apos;m <span className="text-light">Yorgi</span>, a <span className="text-light">student</span> from
+            Antwerp. I&apos;m currently pursuing a degree in <span className="text-light">Informatics</span> at{" "}
             <span className="text-light">AP Hogeschool Antwerp</span>.
           </p>
         </div>
         <div className="grid grid-cols-2 grid-rows-4 gap-16 relative">
           <div className="grid grid-cols-2 grid-rows-4 gap-6 col-span-1 row-span-4">
             <div className="col-span-2 bg-light p-8 rounded-[2.5rem] border border-light">
-              <h1 className="text-gray-dark text-3xl mb-5">Front-end</h1>
+              <h1 className="text-gray-dark text-3xl mb-5 font-medium">Front-end</h1>
               <p className="text-dark text-xl font-mono">
                 TypeScript / React / NextJs / Remix / React Native / Jest / GraphQL / Prettier /{" "}
               </p>
             </div>
             <div className="row-start-2 bg-dark p-8 rounded-[2.5rem] border border-gray-dark">
-              <h1 className="text-gray-light text-3xl mb-4">Styles</h1>
-              <p className="text-light/80 text-xl tracking-wide">
+              <h1 className="text-gray-light text-3xl mb-5 font-medium">Styles</h1>
+              <p className="text-light text-xl tracking-wide">
                 TypeScript / React / NextJs / Remix / React Native /{" "}
               </p>
             </div>
@@ -86,15 +113,15 @@ export default function Index() {
               </a>
             </div>
             <div className="col-span-2 row-start-3 bg-dark p-8 rounded-[2.5rem] border border-gray-dark z-10">
-              <h1 className="text-gray-light text-3xl mb-4">Back-end</h1>
-              <p className="text-light/80 text-xl tracking-wide">
+              <h1 className="text-gray-light text-3xl mb-5 font-medium">Back-end</h1>
+              <p className="text-light text-xl tracking-wide">
                 TypeScript / React / NextJs / Remix / React Native /{" "}
               </p>
             </div>
             <div className="row-start-4">7</div>
             <div className="row-start-4  bg-dark p-8 rounded-[2.5rem] border border-gray-dark z-10">
-              <h1 className="text-gray-light text-3xl mb-4">DevOps</h1>
-              <p className="text-light/80 text-xl tracking-wide">
+              <h1 className="text-gray-light text-3xl mb-5 font-medium">DevOps</h1>
+              <p className="text-light text-xl tracking-wide">
                 TypeScript / React / NextJs / Remix / React Native /{" "}
               </p>
             </div>
@@ -113,40 +140,19 @@ export default function Index() {
       <div className="z-10 mb-10">
         <h1 className="text-[10rem] font-medium font-mono text-light text-right mr-48 p-0 m-0">Work</h1>
         <div className="flex flex-col justify-center items-center">
-          <div className="grid grid-cols-6 gap-4 border-t border-gray-dark w-full px-48 py-4 z-10 hover:bg-light group">
-            <div className="pr-4 border-gray-dark col-span-1">
-              <p className="text-xl text-light group-hover:text-dark">2025 - Present</p>
-              <p className="text-sm text-gray-light group-hover:text-dark">1 month</p>
+          {workExperiences.map((work, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-6 gap-4 border-t border-gray-dark w-full px-48 py-4 z-10 hover:bg-light group"
+            >
+              <div className="pr-4 border-gray-dark col-span-1">
+                <p className="text-xl text-light group-hover:text-dark">{work.period}</p>
+                <p className="text-sm text-gray-light group-hover:text-dark">{work.duration}</p>
+              </div>
+              <p className="text-2xl text-light leading-[200%] col-span-2 group-hover:text-dark">{work.company}</p>
+              <p className="text-2xl text-light leading-[200%] col-span-3 group-hover:text-dark">{work.role}</p>
             </div>
-            <h1 className="text-2xl text-light leading-[200%] col-span-2 group-hover:text-dark">Cloudar</h1>
-            <h1 className="text-2xl text-light leading-[200%] col-span-3 group-hover:text-dark">
-              Internship development
-            </h1>
-          </div>
-          <div className="grid grid-cols-6 gap-4 border-t border-gray-dark w-full px-48 py-4 z-10 hover:bg-light group">
-            <div className="pr-4 border-gray-dark col-span-1">
-              <p className="text-xl text-light group-hover:text-dark">2024 - Present</p>
-              <p className="text-sm text-gray-light group-hover:text-dark">3 months</p>
-            </div>
-            <p className="text-2xl text-light leading-[200%] col-span-2 group-hover:text-dark">Wolf Food Market</p>
-            <p className="text-2xl text-light leading-[200%] col-span-3 group-hover:text-dark">Studentjob</p>
-          </div>
-          <div className="grid grid-cols-6 gap-4 border-t border-gray-dark w-full px-48 py-4 z-10 hover:bg-light group">
-            <div className="pr-4 border-gray-dark col-span-1">
-              <p className="text-xl text-light group-hover:text-dark">2023 - 2024</p>
-              <p className="text-sm text-gray-light group-hover:text-dark">11 months</p>
-            </div>
-            <p className="text-2xl text-light leading-[200%] col-span-2 group-hover:text-dark">AZ Klina</p>
-            <p className="text-2xl text-light leading-[200%] col-span-3 group-hover:text-dark">Studentjob</p>
-          </div>
-          <div className="grid grid-cols-6 gap-4 border-t border-gray-dark w-full px-48 py-4 z-10 hover:bg-light group border-b">
-            <div className="pr-4 border-gray-dark col-span-1">
-              <p className="text-xl text-light group-hover:text-dark">2022 - 2023</p>
-              <p className="text-sm text-gray-light group-hover:text-dark">1 year</p>
-            </div>
-            <p className="text-2xl text-light leading-[200%] col-span-2 group-hover:text-dark">Plein Publiek</p>
-            <p className="text-2xl text-light leading-[200%] col-span-3 group-hover:text-dark">Studentjob</p>
-          </div>
+          ))}
         </div>
       </div>
       {/* End Section Work */}
@@ -172,9 +178,9 @@ export default function Index() {
           </div>
           <div className="row-span-2 col-start-4 row-start-2 gap-8 flex flex-col z-10">
             <div className="rounded-[2.5rem] border border-gray-dark p-8 bg-dark">
-              <h1 className="text-gray-light text-3xl mb-5">Site</h1>
+              <h1 className="text-gray-light text-3xl mb-5 font-medium">Site</h1>
               <p className="text-xl gap-2 font-mono">
-                Handcrafted by ME / <br className="mb-2.5" />
+                Handcrafted by me / <br className="mb-2.5" />
                 Powered by Remix
               </p>
             </div>
