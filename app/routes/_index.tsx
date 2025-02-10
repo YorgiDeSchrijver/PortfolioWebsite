@@ -79,7 +79,7 @@ export default function Index() {
       </div>
       {/* End Head */}
       {/* Start Section about */}
-      <div className="mx-48">
+      <div className="mx-48 mb-24">
         <div className="grid grid-cols-2 mb-32">
           <p className="text-light font-sans font-semibold text-xl ">... /About me ...</p>
           <p className="w-2/3 text-gray-light text-2xl font-sans font-normal z-10 -ml-20">
@@ -92,13 +92,13 @@ export default function Index() {
           <div className="grid grid-cols-2 grid-rows-4 gap-6 col-span-1 row-span-4">
             <div className="col-span-2 bg-light p-8 rounded-[2.5rem] border border-light">
               <h1 className="text-gray-dark text-3xl mb-5 font-medium">Front-end</h1>
-              <p className="text-dark text-xl font-mono leading-10">
+              <p className="text-dark text-xl font-mono leading-10 mb-0">
                 TypeScript / React / NextJs / Remix / React Native / Jest / GraphQL / Prettier
               </p>
             </div>
             <div className="row-start-2 bg-dark p-8 rounded-[2.5rem] border border-gray-dark">
               <h1 className="text-gray-light text-3xl mb-5 font-medium">Styles</h1>
-              <p className="text-light text-xl tracking-wide leading-10 line-clamp-2">
+              <p className="text-light text-xl font-mono leading-10 mb-0 line-clamp-2">
                 Tailwind CSS / SCSS / Material UI / PostCSS / CSS-in-JS
               </p>
             </div>
@@ -114,12 +114,16 @@ export default function Index() {
             </div>
             <div className="col-span-2 row-start-3 bg-dark p-8 rounded-[2.5rem] border border-gray-dark z-10">
               <h1 className="text-gray-light text-3xl mb-5 font-medium">Back-end</h1>
-              <p className="text-light text-xl tracking-wide">TypeScript / React / NextJs / Remix / React Native / </p>
+              <p className="text-light text-xl font-mono leading-10 mb-0">
+                Node.Js / Spring Boot / ASP.NET / Prisma / MongoDB / PostgreSQL / MySQL
+              </p>
             </div>
             <div className="row-start-4">7</div>
             <div className="row-start-4  bg-dark p-8 rounded-[2.5rem] border border-gray-dark z-10">
               <h1 className="text-gray-light text-3xl mb-5 font-medium">DevOps</h1>
-              <p className="text-light text-xl tracking-wide">TypeScript / React / NextJs / Remix / React Native / </p>
+              <p className="text-light text-xl font-mono leading-10 mb-0">
+                TypeScript / React / NextJs / Remix / React Native /{" "}
+              </p>
             </div>
           </div>
           <div className="col-span-1 row-span-3 flex justify-end items-center z-30">
@@ -135,7 +139,7 @@ export default function Index() {
       {/* Start Section work */}
       <div className="z-10 mb-10">
         <h1 className="text-[10rem] font-medium font-mono text-light text-right mr-48 p-0 m-0">Work</h1>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center border-b border-gray-dark mb-32">
           {workExperiences.map((work, index) => (
             <div
               key={index}
