@@ -1,4 +1,3 @@
-import { LoaderFunction } from "@remix-run/node";
 import { Link, MetaFunction, useLoaderData } from "@remix-run/react";
 import Header from "~/components/shared/header";
 import fs from "fs";
@@ -6,6 +5,7 @@ import path from "path";
 import matter from "gray-matter";
 import Markdown from "markdown-to-jsx";
 import { ArrowRight } from "lucide-react";
+import Footer from "~/components/shared/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,6 +13,13 @@ export const meta: MetaFunction = () => {
     { name: "description", content: "Portfolio homepage Yorgi De Schrijver " },
   ];
 };
+
+const links = [
+  { to: "/", label: "Main" },
+  { to: "/blog", label: "About" },
+  { to: "/projects", label: "Blog" },
+  { to: "/contact", label: "Projects" },
+];
 
 export const loader = async () => {
   const postsDirectory = path.join(process.cwd(), "/public/posts");
@@ -35,14 +42,14 @@ export default function Blog() {
   return (
     <div className="overflow-hidden relative">
       <Header />
-      <div className="mx-48 mt-32">
+      <div className="mx-48 mt-32 mb-48">
         <h1 className="text-[10rem] font-medium font-mono text-light text-center p-0 m-0">Blog posts</h1>
         <hr className="border border-gray-dark/60 -mx-48 mt-0" />
-        <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto mt-8">
+        <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto mt-16">
           {posts.map((post) => (
             <div key={post.fileName} className="rounded-[2.5rem] px-12 py-5 gap-4 flex flex-col text-light border border-gray-dark/60">
-              <h1 className="text-light font-mono text-2xl font-medium">{post.fileName}</h1>
-              <p className="text-gray-light font-sans text-md">
+              <h1 className="text-light font-mono text-2xl font-medium line-clamp-2">{post.fileName}</h1>
+              <p className="text-gray-light font-sans text-md line-clamp-3">
                 {/* <Markdown>{post.content.split(" ").slice(0, 50).join(" ")}</Markdown> */}
                 <Markdown>This article presents a simple way to implement a micro service architecture using kafkan golang and docker</Markdown>
               </p>
@@ -56,6 +63,7 @@ export default function Blog() {
           ))}
         </div>
       </div>
+      <Footer links={links} />
     </div>
   );
 }
