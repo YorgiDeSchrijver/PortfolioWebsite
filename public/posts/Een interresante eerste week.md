@@ -1,3 +1,0 @@
-# Hallo
-
-ik ben Yorgi
