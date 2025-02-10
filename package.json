@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "dev": "remix vite:dev",
+    "dev": "remix vite:dev --host",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
@@ -20,8 +20,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.5.2",
+    "gray-matter": "^4.0.3",
     "isbot": "^4.1.0",
     "lucide-react": "^0.473.0",
+    "markdown-to-jsx": "^7.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-textfit": "^1.1.1",
