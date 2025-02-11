@@ -1,6 +1,6 @@
-import { Link } from "@remix-run/react";
 import { cva, VariantProps } from "class-variance-authority";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const textVariants = cva("", {
   variants: {
@@ -28,17 +28,21 @@ const iconVariants = cva("", {
   },
 });
 
-interface LinkButtonProps extends VariantProps<typeof textVariants>, VariantProps<typeof iconVariants> {
-  link: string;
+interface ButtonProps
+  extends VariantProps<typeof textVariants>,
+    VariantProps<typeof iconVariants> {
+  href: string;
   children: React.ReactNode;
 }
 
-export default function LinkButton({ link, children, size, iconSize }: LinkButtonProps) {
+export default function Button({ href, children, size, iconSize }: ButtonProps) {
   const textClass = textVariants({ size });
   const iconClass = iconVariants({ iconSize });
   return (
-    <Link to={link} className="flex flex-row items-end gap-3 justify-end">
-      <span className={`bg-light text-dark text-nowrap rounded-full italic ${textClass}`}>{children}</span>
+    <Link to={href} className="flex flex-row items-end gap-3 justify-end">
+      <span className={`bg-light text-dark text-nowrap rounded-full italic ${textClass}`}>
+        {children}
+      </span>
       <span className={`bg-light rounded-full text-dark ${iconClass}`}>
         <ArrowRight size={32} strokeWidth={1.5} />
       </span>

@@ -1,14 +1,9 @@
-import type { MetaFunction } from "@remix-run/node";
 import { ArrowUpRight, Github, Linkedin } from "lucide-react";
+import ButtonSocial from "../components/ButtonSocial";
+import Header from "../components/Header";
+import Button from "../components/Button";
+import Footer from "../components/Footer";
 import { Textfit } from "react-textfit";
-import HeadLink from "~/components/home/head-link";
-import Footer from "~/components/shared/footer";
-import Header from "~/components/shared/header";
-import LinkButton from "~/components/shared/link-button";
-
-export const meta: MetaFunction = () => {
-  return [{ title: "Yorgi De Schrijver | Home" }, { name: "description", content: "Portfolio homepage Yorgi De Schrijver " }];
-};
 
 const links = [
   { to: "/", label: "Main" },
@@ -44,7 +39,7 @@ const workExperiences = [
   },
 ];
 
-export default function Index() {
+export default function HomePage() {
   return (
     <div className="overflow-hidden relative">
       <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 h-80 w-80 flex items-center justify-center rounded-full border-2 opacity-75 border-gray-dark pointer-events-none z-[100]" />
@@ -53,26 +48,43 @@ export default function Index() {
       <div className=" px-16 gap-y-32 mt-16 flex-col flex items-center justify-center relative h-screen">
         <div className=" gap-y-32 flex-col flex z-50">
           <div className="flex">
-            <Textfit mode="single" max={4000} className="w-2/3 text-light font-mono font-semibold leading-[0.7]">
+            <Textfit
+              mode="single"
+              max={4000}
+              className="w-2/3 text-light font-mono font-semibold leading-[0.7]"
+            >
               Full-stack
             </Textfit>
             <div className="w-1/3 flex flex-row items-end gap-3 justify-end">
-              <LinkButton link="/projects">Projects</LinkButton>
+              <Button href="/projects">Projects</Button>
             </div>
           </div>
           <div className="flex">
             <p className="w-1/3 text-gray-light text-2xl font-sans font-normal">
               My goal is to <span className="text-light">write maintainable, clean </span>and{" "}
-              <span className="text-light">understandable code </span>to process development was enjoyable.
+              <span className="text-light">understandable code </span>to process development was
+              enjoyable.
             </p>
-            <Textfit mode="single" max={4000} className="w-2/3 pl-40 text-light font-mono font-semibold leading-[0.7]">
+            <Textfit
+              mode="single"
+              max={4000}
+              className="w-2/3 pl-40 text-light font-mono font-semibold leading-[0.7]"
+            >
               Developer
             </Textfit>
           </div>
         </div>
         <div className="flex flex-row gap-8 items-center justify-center">
-          <HeadLink href="https://github.com/YorgiDeSchrijver" icon={<Github />} text="GitHub" />
-          <HeadLink href="https://www.linkedin.com/in/yorgi-de-schrijver/" icon={<Linkedin />} text="LinkedIn" />
+          <ButtonSocial
+            href="https://github.com/YorgiDeSchrijver"
+            icon={<Github />}
+            text="GitHub"
+          />
+          <ButtonSocial
+            href="https://www.linkedin.com/in/yorgi-de-schrijver/"
+            icon={<Linkedin />}
+            text="LinkedIn"
+          />
         </div>
         <div className="absolute top-1/12 right-2/12 bg-radial rounded-full from-red-900 from-0% to-dark to-70% size-[30rem] z-0 opacity-75" />
         <div className="absolute bottom-1/12 left-2/12 bg-radial rounded-full from-yellow-900 from-0% to-dark to-70% size-[30rem] z-0 opacity-75" />
@@ -83,8 +95,9 @@ export default function Index() {
         <div className="grid grid-cols-2 mb-32">
           <p className="text-light font-sans font-semibold text-xl ">... /About me ...</p>
           <p className="w-2/3 text-gray-light text-2xl font-sans font-normal z-10 -ml-20">
-            Hello! I&apos;m <span className="text-light">Yorgi</span>, a <span className="text-light">student</span>{" "}
-            from Antwerp. I&apos;m currently pursuing a degree in <span className="text-light">Informatics</span> at{" "}
+            Hello! I&apos;m <span className="text-light">Yorgi</span>, a{" "}
+            <span className="text-light">student</span> from Antwerp. I&apos;m currently pursuing a
+            degree in <span className="text-light">Informatics</span> at{" "}
             <span className="text-light">AP Hogeschool Antwerp</span>.
           </p>
         </div>
@@ -103,7 +116,10 @@ export default function Index() {
               </p>
             </div>
             <div className="row-start-2 flex justify-center items-center">
-              <a href="https://github.com/YorgiDeSchrijver" className="flex flex-row justify-center items-center">
+              <a
+                href="https://github.com/YorgiDeSchrijver"
+                className="flex flex-row justify-center items-center"
+              >
                 <div className="p-6 border border-gray-light rounded-full">
                   <Github className="fill-light stroke-light" size={24} />
                 </div>
@@ -128,7 +144,11 @@ export default function Index() {
           </div>
           <div className="col-span-1 row-span-3 flex justify-end items-center z-30">
             <div className="w-2/3 h-full overflow-hidden rounded-[2.5rem]">
-              <img className="object-cover w-full h-full" src="/assets/images/portrait.jpg" alt="" />
+              <img
+                className="object-cover w-full h-full"
+                src="/assets/images/portrait.jpg"
+                alt=""
+              />
             </div>
           </div>
           <div className="absolute -top-5 right-0 translate-x-1/3 -translate-y-1/3 size-[50rem] flex items-center justify-center rounded-full border-2 opacity-75 border-gray-dark pointer-events-none z-[0]" />
@@ -138,7 +158,9 @@ export default function Index() {
       {/* End Section about */}
       {/* Start Section work */}
       <div className="z-10 mb-10">
-        <h1 className="text-[10rem] font-medium font-mono text-light text-right mr-48 p-0 m-0">Work</h1>
+        <h1 className="text-[10rem] font-medium font-mono text-light text-right mr-48 p-0 m-0">
+          Work
+        </h1>
         <div className="flex flex-col justify-center items-center border-b border-gray-dark mb-32">
           {workExperiences.map((work, index) => (
             <div
@@ -149,8 +171,12 @@ export default function Index() {
                 <p className="text-xl text-light group-hover:text-dark">{work.period}</p>
                 <p className="text-sm text-gray-light group-hover:text-dark">{work.duration}</p>
               </div>
-              <p className="text-2xl text-light leading-[200%] col-span-2 group-hover:text-dark">{work.company}</p>
-              <p className="text-2xl text-light leading-[200%] col-span-3 group-hover:text-dark">{work.role}</p>
+              <p className="text-2xl text-light leading-[200%] col-span-2 group-hover:text-dark">
+                {work.company}
+              </p>
+              <p className="text-2xl text-light leading-[200%] col-span-3 group-hover:text-dark">
+                {work.role}
+              </p>
             </div>
           ))}
         </div>

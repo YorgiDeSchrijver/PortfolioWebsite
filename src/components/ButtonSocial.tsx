@@ -6,7 +6,7 @@ interface HeadLinkProps {
   text: string;
 }
 
-export default function HeadLink({ href, icon, text }: HeadLinkProps) {
+export default function ButtonSocial({ href, icon, text }: HeadLinkProps) {
   return (
     <a
       href={href}
