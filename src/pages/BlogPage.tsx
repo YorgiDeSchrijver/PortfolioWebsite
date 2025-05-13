@@ -23,7 +23,7 @@ export default function BlogPage() {
           Blog posts
         </h1>
         <hr className="border border-gray-dark/60 -mx-48 mt-0" />
-        <div className="grid grid-cols-2 gap-4 max-w-5xl mx-auto mt-16">
+        <div className="grid grid-cols-3 gap-4 max-w-screen mx-auto mt-16">
           {posts && posts.map((post) => (
             <div
               key={post.fileName}
