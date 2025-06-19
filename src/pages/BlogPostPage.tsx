@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import usePosts from '../hooks/usePosts';
+import { useEffect } from 'react';
 
 const links = [
   { to: '/', label: 'Main' },
@@ -15,6 +16,9 @@ export default function BlogPostPage() {
   const { postId } = useParams();
   const { posts } = usePosts();
   const data = posts.find((post) => post.fileName === postId);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   return (
     <div className='overflow-hidden relative'>
       <Header />

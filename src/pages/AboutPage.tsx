@@ -2,6 +2,7 @@ import { MapPin, Calendar, GraduationCap } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Textfit } from 'react-textfit';
+import { useEffect } from 'react';
 
 const links = [
   { to: '/', label: 'Main' },
@@ -47,6 +48,9 @@ const education = [
 ];
 
 export default function AboutPage() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   return (
     <div className='overflow-hidden relative'>
       <div className='absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 h-80 w-80 flex items-center justify-center rounded-full border-2 opacity-75 border-gray-dark pointer-events-none z-[100]' />
@@ -140,10 +144,10 @@ export default function AboutPage() {
             </h2>
             <ul className='text-dark text-lg font-sans space-y-2'>
               <li>• Cloud architecture and AWS services</li>
-              <li>• Infrastructure as Code with Terraform</li>
-              <li>• CI/CD pipeline development</li>
+              <li>• Infrastructure as Code with CDK</li>
+              <li>• AI development</li>
               <li>• Microservices architecture</li>
-              <li>• Container orchestration</li>
+              <li>• And more...</li>
             </ul>
           </div>
         </div>

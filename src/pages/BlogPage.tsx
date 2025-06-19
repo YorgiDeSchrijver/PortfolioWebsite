@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Markdown from 'markdown-to-jsx';
 import Header from '../components/Header';
 import usePosts from '../hooks/usePosts';
+import { useEffect } from 'react';
 
 const links = [
   { to: '/', label: 'Main' },
@@ -15,6 +16,9 @@ const links = [
 export default function BlogPage() {
   const { posts } = usePosts();
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   return (
     <div className='overflow-hidden relative'>
       <Header />

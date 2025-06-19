@@ -1,5 +1,6 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import { useEffect } from 'react';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const links = [
   { to: '/', label: 'Main' },
@@ -9,12 +10,15 @@ const links = [
 ];
 
 export default function NotFoundPage() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   return (
-    <div className="overflow-hidden relative">
+    <div className='overflow-hidden relative'>
       <Header />
-      <div className="bg-dark h-screen w-screen flex flex-col justify-center items-center">
-        <h1 className="text-light text-[10rem] font-black">404</h1>
-        <p className="text-white text-8xl font-semibold">Page not found</p>
+      <div className='bg-dark h-screen w-screen flex flex-col justify-center items-center'>
+        <h1 className='text-light text-[10rem] font-black'>404</h1>
+        <p className='text-white text-8xl font-semibold'>Page not found</p>
       </div>
       <Footer links={links} />
     </div>
