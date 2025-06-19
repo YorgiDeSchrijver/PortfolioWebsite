@@ -2,10 +2,10 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const links = [
-  { to: "/", label: "Main" },
-  { to: "/blog", label: "About" },
-  { to: "/projects", label: "Blog" },
-  { to: "/contact", label: "Projects" },
+  { to: '/', label: 'Main' },
+  { to: '/about', label: 'About' },
+  { to: '/blog', label: 'Blog' },
+  { to: '/contact', label: 'Contacts' },
 ];
 
 export default function NotFoundPage() {

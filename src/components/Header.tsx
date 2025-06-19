@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const links = [
   { to: "/about", label: "About" },
   { to: "/blog", label: "Blog" },
-  { to: "/projects", label: "Projects" },
   { to: "/contact", label: "Contacts" },
 ];
 
@@ -31,7 +30,7 @@ export default function Header() {
   }, []);
   return (
     <header
-      className={`grid grid-cols-3 items-center py-4 px-16 text-white font-sans w-full transition-all duration-1000 ${isInitial ? "absolute top-0" : isScrolled ? "bg-dark fixed top-0 z-[75] translate-y-0" : "fixed top-0 -translate-y-full"}`}
+      className={`grid grid-cols-3 items-center py-4 px-16 text-white font-sans w-full transition-all duration-1000 ${isInitial ? "absolute top-0" : isScrolled ? "bg-dark fixed top-0 z-[2000] translate-y-0" : "fixed top-0 -translate-y-full"}`}
     >
       <Link to="/" className="flex flex-col text-xl">
         <span>Yorgi</span>
@@ -45,8 +44,8 @@ export default function Header() {
         ))}
       </nav>
       <div className="flex flex-col items-end text-lg">
-        <button className="hover:underline active:underline">NL</button>
-        <button className="hover:underline text-gray-light active:underline">EN</button>
+        <button className="hover:underline underline">EN</button>
+        <button className="hover:underline text-gray-light active:underline">NL</button>
       </div>
     </header>
   );
